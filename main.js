@@ -49,6 +49,85 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+let brush = document.querySelector(".current-brush");
+let brushClassList = brush.classList;
+
+let app = document.querySelector(".app");
+let isMouseDown = false;
+
+let canvas = document.querySelectorAll('.canvas div');
+
+
+let color1 = document.querySelector(".color-1");
+let color1ClassList = color1.classList;
+  color1.addEventListener("click", function(){
+  brushClassList.replace(brushClassList[1],color1ClassList[1]);
+});
+
+let color2 = document.querySelector(".color-2");
+let color2ClassList = color2.classList;
+    color2.addEventListener("click", function(){
+  brushClassList.replace(brushClassList[1],color2ClassList[1]);
+});
+
+let color3 = document.querySelector(".color-3");
+let color3ClassList = color3.classList;
+  color3.addEventListener("click", function(){
+  brushClassList.replace(brushClassList[1],color3ClassList[1]);
+});
+
+let color4 = document.querySelector(".color-4");
+let color4ClassList = color4.classList;
+  color4.addEventListener("click", function(){
+  brushClassList.replace(brushClassList[1],color4ClassList[1]);
+});
+
+let color5 = document.querySelector(".color-5");
+let color5ClassList = color5.classList;
+  color5.addEventListener("click", function(){
+  brushClassList.replace(brushClassList[1],color5ClassList[1]);
+});
+
+
+for(let i = 0; i<canvas.length;i++){
+   
+
+    canvas[i].addEventListener("mouseover", function(){
+      if (isMouseDown === true){
+      let canvasClassList = canvas[i].classList;
+      canvasClassList.replace(canvasClassList[1],brushClassList[1]);
+      }
+    })    
+}
+
+app.addEventListener("mousedown",function(){
+  isMouseDown = true;
+})
+
+app.addEventListener("mouseup",function(){
+  isMouseDown = false;
+})
+
+
+
+
+
+
+
+
+
+    
+  
+          
+
+
+
+
+
+
+
+
+
 
 
 /****************************
